@@ -15,8 +15,6 @@ Cette application permet de télécharger des fichiers depuis les URLs archivée
 
 ## Structure du projet
 
-
-
 ### 1. `main.py`
 
 Ce fichier contient le point d'entrée principal de l'application. Il initialise l'application PyQt5 et affiche la fenêtre principale de l'interface utilisateur.
@@ -49,3 +47,8 @@ Pour installer PyQt5, exécutez la commande suivante :
 
 ```bash
 pip install PyQt5
+```
+
+## A savoir
+
+Les téléchargement provenant du site archive.org, ils peuvent parfois être très lents.
