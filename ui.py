@@ -1,3 +1,5 @@
+import os
+import requests
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QComboBox, QFileDialog, QProgressBar, QMessageBox
 from PyQt5.QtCore import QThread, pyqtSignal
 from downloader import list_files, download_files
