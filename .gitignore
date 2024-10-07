@@ -1,4 +1,9 @@
-# ignore them
+# Fichiers du projet à ignorer
 /.old
 /test
 /__pycache__
+
+# Fichiers générés par PyInstaller
+/build/
+/dist/
+*.spec
