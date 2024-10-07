@@ -1,3 +1,21 @@
+# Arquivista.exe Downloader
+
+## Description
+
+Cette application permet de télécharger des fichiers depuis les URLs archivées d'Arquivista.exe sur le site archive.org, en filtrant les fichiers par région (`JP`, `EU`, `US`, etc.) et en les téléchargeant directement dans un dossier choisi par l'utilisateur. L'application dispose d'une interface graphique moderne construite avec **PyQt5** et inclut une barre de progression affichant l'avancement du téléchargement fichier par fichier.
+
+## Fonctionnalités
+
+- **Sélection de systèmes** : Choisissez un système parmi les options disponibles (ex. : PSX, Dreamcast, PSP, etc.).
+- **Filtrage des fichiers** : Filtrez les fichiers en fonction de la région (`JP`, `EU`, `US`, `WR`, `FR`).
+- **Téléchargement dans un dossier** : Sélectionnez un dossier de destination où les fichiers seront téléchargés.
+- **Barre de progression** : Suivez l'avancement du téléchargement via une barre de progression.
+- **Affichage de la progression** : Le nombre de fichiers téléchargés et ignorés est affiché dans un label mis à jour en temps réel.
+- **Gestion des erreurs** : Les erreurs de téléchargement ou de sélection sont affichées dans des boîtes de dialogue.
+
+## Structure du projet
+
+
 
 ### 1. `main.py`
 
