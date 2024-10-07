@@ -23,7 +23,7 @@ class DownloaderApp(QWidget):
         layout.addWidget(self.filter_label)
 
         self.filter_combo = QComboBox()
-        self.filter_combo.addItems(["EU", "JP", "US", "WR", "DE", "ES", "FR", "IT"])
+        self.filter_combo.addItems(["EU", "JP", "US", "WR", "DE", "ES", "FR", "GE", "IT"])
         layout.addWidget(self.filter_combo)
 
         # Bouton de téléchargement
