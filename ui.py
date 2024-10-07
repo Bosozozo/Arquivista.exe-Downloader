@@ -11,7 +11,7 @@ class DownloaderApp(QWidget):
         layout = QVBoxLayout()
 
         # Systèmes
-        self.system_label = QLabel('Sélectionnez un système :')
+        self.system_label = QLabel('Select a system :')
         layout.addWidget(self.system_label)
 
         self.system_combo = QComboBox()
@@ -19,15 +19,15 @@ class DownloaderApp(QWidget):
         layout.addWidget(self.system_combo)
 
         # Filtres
-        self.filter_label = QLabel('Sélectionnez un filtre :')
+        self.filter_label = QLabel('Select a region :')
         layout.addWidget(self.filter_label)
 
         self.filter_combo = QComboBox()
-        self.filter_combo.addItems(["JP", "EU", "US", "WR", "FR"])
+        self.filter_combo.addItems(["EU", "JP", "US", "WR", "DE", "ES", "FR", "IT"])
         layout.addWidget(self.filter_combo)
 
         # Bouton de téléchargement
-        self.download_button = QPushButton('Sélectionner le dossier et démarrer le téléchargement')
+        self.download_button = QPushButton('Download')
         self.download_button.clicked.connect(self.on_download)
         layout.addWidget(self.download_button)
 
@@ -37,11 +37,11 @@ class DownloaderApp(QWidget):
         layout.addWidget(self.progress_bar)
 
         # Label de progression
-        self.progress_label = QLabel('Progression : 0/0')
+        self.progress_label = QLabel('Progress : 0/0')
         layout.addWidget(self.progress_label)
 
         self.setLayout(layout)
-        self.setWindowTitle('Téléchargeur de liens')
+        self.setWindowTitle('Arquivista.exe Downloader')
         self.setGeometry(300, 300, 400, 200)
 
     def on_download(self):
@@ -51,21 +51,21 @@ class DownloaderApp(QWidget):
         base_url = get_systems().get(selected_system, None)
 
         if not base_url:
-            QMessageBox.warning(self, "Erreur", "Veuillez sélectionner un système valide.")
+            QMessageBox.warning(self, "Error", "Please select a system.")
             return
 
         # Lister les fichiers correspondant au filtre
         files_to_download = list_files(base_url, selected_filter)
 
         if files_to_download is None or len(files_to_download) == 0:
-            QMessageBox.warning(self, "Aucun fichier trouvé", f"Aucun fichier contenant '{selected_filter}' n'a été trouvé pour le système {selected_system}.")
+            QMessageBox.warning(self, "No file found", f"No file including '{selected_filter}' has been found for {selected_system}.")
             return
 
         # Sélection du dossier de téléchargement
-        download_folder = QFileDialog.getExistingDirectory(self, "Sélectionnez un dossier pour télécharger les fichiers")
+        download_folder = QFileDialog.getExistingDirectory(self, "Downloade")
 
         if not download_folder:
-            QMessageBox.warning(self, "Erreur", "Veuillez sélectionner un dossier de téléchargement.")
+            QMessageBox.warning(self, "Error", "Please select a folder.")
             return
 
         # Lancer le téléchargement
@@ -75,9 +75,9 @@ class DownloaderApp(QWidget):
         # Callback pour mettre à jour la progression
         def progress_callback(current, total):
             self.progress_bar.setValue(current)
-            self.progress_label.setText(f"Progression : {current}/{total}")
+            self.progress_label.setText(f"Progress : {current}/{total}")
             self.progress_bar.setMaximum(total)
 
         downloaded_count, skipped_count = download_files(download_folder, files_to_download, progress_callback)
 
-        QMessageBox.information(self, "Terminé", f"Terminé : {downloaded_count} fichiers téléchargés, {skipped_count} ignorés.")
+        QMessageBox.information(self, "Done", f"Done : {downloaded_count} files downloaded, {skipped_count} skipped.")
