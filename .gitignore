@@ -2,7 +2,7 @@
 /.old
 /test
 /__pycache__
-icon.ico
+res/icon.ico
 
 # Fichiers générés par PyInstaller
 /build/
