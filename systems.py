@@ -1,8 +1,8 @@
 systems_urls = {
-    "PSX": "https://archive.org/download/PS1_EU_Arquivista",
-    "Dreamcast": "https://archive.org/download/CentralArquivista-Dreamcast",
-    "CD32": "https://archive.org/download/AMIGACD32-Arquivista",
-    "PSP": "https://archive.org/download/PSP_EU_Arquivista",
+    "Gameboy": "https://archive.org/download/CentralArquivista-GameBoy",
+    "N64": "https://archive.org/download/CentralArquivista-Nintendo64",
+    "NES": "https://archive.org/download/CentralArquivista-Nintendo",
+    "SNES": "https://archive.org/download/CentralArquivista-NintendoSuperNintendo",
 }
 
 def get_systems():
