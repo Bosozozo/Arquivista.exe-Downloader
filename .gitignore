@@ -1,0 +1,4 @@
+# ignore them
+/.old
+/test
+/__pycache__
