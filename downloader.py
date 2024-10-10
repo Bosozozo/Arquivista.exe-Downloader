@@ -28,7 +28,7 @@ def download_files(download_folder, files_to_download, progress_callback):
 
         # Vérification si le fichier existe déjà
         if os.path.exists(file_name):
-            print(f"Ignoré : {file_name} existe déjà.")
+            print(f"Skipped : {file_name} already exists.")
             skipped_count += 1
         else:
             try:
@@ -36,10 +36,10 @@ def download_files(download_folder, files_to_download, progress_callback):
                 file_response.raise_for_status()
                 with open(file_name, 'wb') as f:
                     f.write(file_response.content)
-                print(f"Téléchargé : {file_name}")
+                print(f"Downloaded : {file_name}")
                 downloaded_count += 1
             except Exception as e:
-                print(f"Erreur lors du téléchargement : {e}")
+                print(f"Error during download : {e}")
 
         # Mise à jour de la progression via le callback
         progress_callback(index + 1, total_files)

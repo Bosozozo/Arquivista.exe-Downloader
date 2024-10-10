@@ -7,7 +7,7 @@ Cette application permet de télécharger des fichiers depuis les URLs archivée
 ## Fonctionnalités
 
 - **Sélection de systèmes** : Choisissez un système parmi les options disponibles (ex. : PSX, Dreamcast, PSP, etc.).
-- **Filtrage des fichiers** : Filtrez les fichiers en fonction de la région (`JP`, `EU`, `US`, `WR`, `FR`).
+- **Filtrage des fichiers** : Filtrez les fichiers en fonction de la région (`JP`, `EU`, `US`, ...).
 - **Téléchargement dans un dossier** : Sélectionnez un dossier de destination où les fichiers seront téléchargés.
 - **Barre de progression** : Suivez l'avancement du téléchargement via une barre de progression.
 - **Affichage de la progression** : Le nombre de fichiers téléchargés et ignorés est affiché dans un label mis à jour en temps réel.
