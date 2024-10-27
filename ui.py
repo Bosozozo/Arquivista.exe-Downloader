@@ -62,8 +62,9 @@ class DownloaderApp(QWidget):
         self.filter_label = QLabel('Select a region:')
         layout.addWidget(self.filter_label)
 
+        # Ajouter "ALL" comme option de filtre
         self.filter_combo = QComboBox()
-        self.filter_combo.addItems(["EU", "JP", "US", "WR", "DE", "ES", "FR", "GE", "IT"])
+        self.filter_combo.addItems(["ALL", "EU", "JP", "US", "WR", "DE", "ES", "FR", "GE", "IT"])
         layout.addWidget(self.filter_combo)
 
         self.download_button = QPushButton('Download')
@@ -90,7 +91,11 @@ class DownloaderApp(QWidget):
             QMessageBox.warning(self, "Error", "Please select a system.")
             return
 
-        files_to_download = list_files(base_url, selected_filter)
+        # Si "ALL" est sélectionné, on récupère tous les fichiers sans appliquer de filtre
+        if selected_filter == "ALL":
+            files_to_download = list_files(base_url, None)  # None signifie pas de filtre
+        else:
+            files_to_download = list_files(base_url, selected_filter)
 
         if files_to_download is None or len(files_to_download) == 0:
             QMessageBox.warning(self, "No file found", f"No file including '{selected_filter}' has been found for {selected_system}.")

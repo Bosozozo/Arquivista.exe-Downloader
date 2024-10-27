@@ -6,6 +6,7 @@ systems_urls = {
     "Master System": "https://archive.org/download/CentralArquivista-SegaMasterSystem",
     "Megadrive": "https://archive.org/download/CentralArquivista-SegaMegaDrive",
     "Nintendo 64": "https://archive.org/download/CentralArquivista-Nintendo64",
+    "NeoGeo AES": "https://archive.org/download/NeoGeoAES-Arquivista",
     "NeoGeo Pocket Color" : "https://archive.org/download/CentralArquivista-NeoGeoPocketColor",
     "NES": "https://archive.org/download/CentralArquivista-Nintendo",
     "PC Engine": "https://archive.org/download/CentralArquivista-NecPcEngine",
